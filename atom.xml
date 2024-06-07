@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-06-07T07:30:51.691Z</updated>
+  <updated>2024-06-07T07:46:32.866Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>图片转webp</title>
+    <link href="http://example.com/2024/06/07/%E5%9B%BE%E7%89%87%E8%BD%ACwebp/"/>
+    <id>http://example.com/2024/06/07/%E5%9B%BE%E7%89%87%E8%BD%ACwebp/</id>
+    <published>2024-06-07T07:35:32.000Z</published>
+    <updated>2024-06-07T07:46:32.866Z</updated>
+    
+    <content type="html"><![CDATA[<p>图片转为webp格式的方式有很多种，包括在线工具、图像编辑软件、命令行工具。本文以命令行工具为例说明。</p><h2 id="使用命令行工具（cwebp）"><a href="#使用命令行工具（cwebp）" class="headerlink" title="使用命令行工具（cwebp）"></a>使用命令行工具（cwebp）</h2><p>使用命令行工具如<code>cwebp</code>来进行转换。</p><h3 id="安装cwebp"><a href="#安装cwebp" class="headerlink" title="安装cwebp"></a>安装<code>cwebp</code></h3><p>1、对于Windows用户，可以从<code>Google WebP</code>下载。</p><p>2、macOS用户，可以使用Homebrew进行安装：</p><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install webp</span><br></pre></td></tr></table></figure></div><h3 id="转化图片"><a href="#转化图片" class="headerlink" title="转化图片"></a>转化图片</h3><p>1、打开命令行工具。</p><p>2、使用以下命令将图片转换为WebP格式：</p><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cwebp input.jpg -o output.webp</span><br></pre></td></tr></table></figure></div><p><font color=red>注意：</font>其中，input.jpg是你的输入图片文件名，output.webp是输出的WebP文件名。</p><p>该命令执行后，你的图片将转为webp格式。<br>祝你好运～</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;图片转为webp格式的方式有很多种，包括在线工具、图像编辑软件、命令行工具。本文以命令行工具为例说明。&lt;/p&gt;
+&lt;h2 id=&quot;使用命令行工具（cwebp）&quot;&gt;&lt;a href=&quot;#使用命令行工具（cwebp）&quot; class=&quot;headerlink&quot; title=&quot;使用命令行</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Hexo配置后页面404</title>
