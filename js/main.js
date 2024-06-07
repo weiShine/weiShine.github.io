@@ -1,138 +1,82 @@
-// Dean Attali / Beautiful Jekyll 2016
+/* main function */
+import initUtils from "./utils.js";
+import initTyped from "./plugins/typed.js";
+import initModeToggle from "./tools/lightDarkSwitch.js";
+import initLazyLoad from "./layouts/lazyload.js";
+import initScrollTopBottom from "./tools/scrollTopBottom.js";
+import initLocalSearch from "./tools/localSearch.js";
+import initCopyCode from "./tools/codeBlock.js";
 
-var main = {
-
-  bigImgEl : null,
-  numImgs : null,
-
-  init : function() {
-    // Shorten the navbar after scrolling a little bit down
-    $(window).scroll(function() {
-        if ($(".navbar").offset().top > 50) {
-            $(".navbar").addClass("top-nav-short");
-        } else {
-            $(".navbar").removeClass("top-nav-short");
-        }
-    });
-    
-    // On mobile, hide the avatar when expanding the navbar menu
-    $('#main-navbar').on('show.bs.collapse', function () {
-      $(".navbar").addClass("top-nav-expanded");
-    });
-    $('#main-navbar').on('hidden.bs.collapse', function () {
-      $(".navbar").removeClass("top-nav-expanded");
-    });
-	
-    // On mobile, when clicking on a multi-level navbar menu, show the child links
-    $('#main-navbar').on("click", ".navlinks-parent", function(e) {
-      var target = e.target;
-      $.each($(".navlinks-parent"), function(key, value) {
-        if (value == target) {
-          $(value).parent().toggleClass("show-children");
-        } else {
-          $(value).parent().removeClass("show-children");
-        }
-      });
-    });
-    
-    // Ensure nested navbar menus are not longer than the menu header
-    var menus = $(".navlinks-container");
-    if (menus.length > 0) {
-      var navbar = $("#main-navbar ul");
-      var fakeMenuHtml = "<li class='fake-menu' style='display:none;'><a></a></li>";
-      navbar.append(fakeMenuHtml);
-      var fakeMenu = $(".fake-menu");
-
-      $.each(menus, function(i) {
-        var parent = $(menus[i]).find(".navlinks-parent");
-        var children = $(menus[i]).find(".navlinks-children a");
-        var words = [];
-        $.each(children, function(idx, el) { words = words.concat($(el).text().trim().split(/\s+/)); });
-        var maxwidth = 0;
-        $.each(words, function(id, word) {
-          fakeMenu.html("<a>" + word + "</a>");
-          var width =  fakeMenu.width();
-          if (width > maxwidth) {
-            maxwidth = width;
-          }
-        });
-        $(menus[i]).css('min-width', maxwidth + 'px')
-      });
-
-      fakeMenu.remove();
-    }        
-    
-    // show the big header image	
-    main.initImgs();
+export const main = {
+  themeInfo: {
+    theme: `Redefine v${theme.version}`,
+    author: "EvanNotFound",
+    repository: "https://github.com/EvanNotFound/hexo-theme-redefine",
   },
-  
-  initImgs : function() {
-    // If the page was large images to randomly select from, choose an image
-    if ($("#header-big-imgs").length > 0) {
-      main.bigImgEl = $("#header-big-imgs");
-      main.numImgs = main.bigImgEl.attr("data-num-img");
-
-          // 2fc73a3a967e97599c9763d05e564189
-	  // set an initial image
-	  var imgInfo = main.getImgInfo();
-	  var src = imgInfo.src;
-	  var desc = imgInfo.desc;
-  	  main.setImg(src, desc);
-  	
-	  // For better UX, prefetch the next image so that it will already be loaded when we want to show it
-  	  var getNextImg = function() {
-	    var imgInfo = main.getImgInfo();
-	    var src = imgInfo.src;
-	    var desc = imgInfo.desc;		  
-	    
-		var prefetchImg = new Image();
-  		prefetchImg.src = src;
-		// if I want to do something once the image is ready: `prefetchImg.onload = function(){}`
-		
-  		setTimeout(function(){
-                  var img = $("<div></div>").addClass("big-img-transition").css("background-image", 'url(' + src + ')');
-  		  $(".intro-header.big-img").prepend(img);
-  		  setTimeout(function(){ img.css("opacity", "1"); }, 50);
-		  
-		  // after the animation of fading in the new image is done, prefetch the next one
-  		  //img.one("transitioned webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
-		  setTimeout(function() {
-		    main.setImg(src, desc);
-			img.remove();
-  			getNextImg();
-		  }, 1000); 
-  		  //});		
-  		}, 6000);
-  	  };
-	  
-	  // If there are multiple images, cycle through them
-	  if (main.numImgs > 1) {
-  	    getNextImg();
-	  }
+  localStorageKey: "REDEFINE-THEME-STATUS",
+  styleStatus: {
+    isExpandPageWidth: false,
+    isDark: theme.colors.default_mode && theme.colors.default_mode === "dark",
+    fontSizeLevel: 0,
+    isOpenPageAside: true,
+  },
+  printThemeInfo: () => {
+    console.log(
+      `      ______ __  __  ______  __    __  ______                       \r\n     \/\\__  _\/\\ \\_\\ \\\/\\  ___\\\/\\ \"-.\/  \\\/\\  ___\\                      \r\n     \\\/_\/\\ \\\\ \\  __ \\ \\  __\\\\ \\ \\-.\/\\ \\ \\  __\\                      \r\n        \\ \\_\\\\ \\_\\ \\_\\ \\_____\\ \\_\\ \\ \\_\\ \\_____\\                    \r\n         \\\/_\/ \\\/_\/\\\/_\/\\\/_____\/\\\/_\/  \\\/_\/\\\/_____\/                    \r\n                                                               \r\n ______  ______  _____   ______  ______ __  __   __  ______    \r\n\/\\  == \\\/\\  ___\\\/\\  __-.\/\\  ___\\\/\\  ___\/\\ \\\/\\ \"-.\\ \\\/\\  ___\\   \r\n\\ \\  __<\\ \\  __\\\\ \\ \\\/\\ \\ \\  __\\\\ \\  __\\ \\ \\ \\ \\-.  \\ \\  __\\   \r\n \\ \\_\\ \\_\\ \\_____\\ \\____-\\ \\_____\\ \\_\\  \\ \\_\\ \\_\\\\\"\\_\\ \\_____\\ \r\n  \\\/_\/ \/_\/\\\/_____\/\\\/____\/ \\\/_____\/\\\/_\/   \\\/_\/\\\/_\/ \\\/_\/\\\/_____\/\r\n                                                               \r\n  Github: https:\/\/github.com\/EvanNotFound\/hexo-theme-redefine`,
+    ); // console log message
+  },
+  setStyleStatus: () => {
+    localStorage.setItem(
+      main.localStorageKey,
+      JSON.stringify(main.styleStatus),
+    );
+  },
+  getStyleStatus: () => {
+    let temp = localStorage.getItem(main.localStorageKey);
+    if (temp) {
+      temp = JSON.parse(temp);
+      for (let key in main.styleStatus) {
+        main.styleStatus[key] = temp[key];
+      }
+      return temp;
+    } else {
+      return null;
     }
   },
-  
-  getImgInfo : function() {
-  	var randNum = Math.floor((Math.random() * main.numImgs) + 1);
-    var src = main.bigImgEl.attr("data-img-src-" + randNum);
-	var desc = main.bigImgEl.attr("data-img-desc-" + randNum);
-	
-	return {
-	  src : src,
-	  desc : desc
-	}
+  refresh: () => {
+    initUtils();
+    initModeToggle();
+    initScrollTopBottom();
+    if (
+      theme.home_banner.subtitle.text.length !== 0 &&
+      location.pathname === config.root
+    ) {
+      initTyped("subtitle");
+    }
+
+    if (theme.navbar.search.enable === true) {
+      initLocalSearch();
+    }
+
+    if (theme.articles.code_block.copy === true) {
+      initCopyCode();
+    }
+
+    if (theme.articles.lazyload === true) {
+      initLazyLoad();
+    }
   },
-  
-  setImg : function(src, desc) {
-	$(".intro-header.big-img").css("background-image", 'url(' + src + ')');
-	if (typeof desc !== typeof undefined && desc !== false) {
-	  $(".img-desc").text(desc).show();
-	} else {
-	  $(".img-desc").hide();  
-	}
-  }
 };
 
-// 2fc73a3a967e97599c9763d05e564189
+export function initMain() {
+  main.printThemeInfo();
+  main.refresh();
+}
 
-document.addEventListener('DOMContentLoaded', main.init);
+document.addEventListener("DOMContentLoaded", initMain);
+
+try {
+  swup.hooks.on("page:view", () => {
+    main.refresh();
+  });
+} catch (e) {}
