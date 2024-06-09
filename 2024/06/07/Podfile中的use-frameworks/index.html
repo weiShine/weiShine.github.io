@@ -13,22 +13,21 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2024/06/07/图片转webp/"/>
+    <link rel="canonical" href="http://example.com/2024/06/07/podfile中的use-frameworks/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="图片转为webp格式的方式有很多种，包括在线工具、图像编辑软件、命令行工具。本文以命令行工具为例说明。 使用命令行工具（cwebp）使用命令行工具如cwebp来进行转换。 安装cwebp1、对于Windows用户，可以从Google WebP下载。 2、macOS用户，可以使用Homebrew进行安装： 1brew install webp  转化图片1、打开命令行工具。 2、使用以下命令将图片转">
+        <meta name="description" content="use_frameworks!生效的条件1、use_frameworks!只会在第三方库的podspec文件中没有设置s.static_framework &#x3D; true&#x2F;falue时有效，如果第三方库的podspec文件中设置了s.static_framework &#x3D; true&#x2F;false， 那么依podspec中的设置为准。 2、第三方库必须是源代码，否则">
 <meta property="og:type" content="article">
-<meta property="og:title" content="图片转webp">
-<meta property="og:url" content="http://example.com/2024/06/07/%E5%9B%BE%E7%89%87%E8%BD%ACwebp/index.html">
+<meta property="og:title" content="Podfile中的use_frameworks">
+<meta property="og:url" content="http://example.com/2024/06/07/Podfile%E4%B8%AD%E7%9A%84use-frameworks/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="图片转为webp格式的方式有很多种，包括在线工具、图像编辑软件、命令行工具。本文以命令行工具为例说明。 使用命令行工具（cwebp）使用命令行工具如cwebp来进行转换。 安装cwebp1、对于Windows用户，可以从Google WebP下载。 2、macOS用户，可以使用Homebrew进行安装： 1brew install webp  转化图片1、打开命令行工具。 2、使用以下命令将图片转">
+<meta property="og:description" content="use_frameworks!生效的条件1、use_frameworks!只会在第三方库的podspec文件中没有设置s.static_framework &#x3D; true&#x2F;falue时有效，如果第三方库的podspec文件中设置了s.static_framework &#x3D; true&#x2F;false， 那么依podspec中的设置为准。 2、第三方库必须是源代码，否则">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-06-07T07:35:32.000Z">
-<meta property="article:modified_time" content="2024-06-07T11:07:03.168Z">
+<meta property="article:published_time" content="2024-06-07T10:25:45.000Z">
+<meta property="article:modified_time" content="2024-06-07T11:08:43.182Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="webp">
 <meta name="twitter:card" content="summary">
     
     
@@ -41,7 +40,7 @@
     
     <title>
         
-            图片转webp -
+            Podfile中的use_frameworks -
         
         amy的码农爸爸
     </title>
@@ -388,7 +387,7 @@
         <div class="article-title relative w-full">
             
                 <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">图片转webp</h1>
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">Podfile中的use_frameworks</h1>
                 </div>
             
             </div>
@@ -409,15 +408,15 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2024-06-07 15:35:32</span>
-        <span class="mobile">2024-06-07 15:35:32</span>
+        <span class="desktop">2024-06-07 18:25:45</span>
+        <span class="mobile">2024-06-07 18:25:45</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-06-07 19:07:03</span>
-            <span class="mobile">2024-06-07 19:07:03</span>
+            <span class="desktop">2024-06-07 19:08:43</span>
+            <span class="mobile">2024-06-07 19:08:43</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -431,7 +430,7 @@
                     
                         
                         <li>
-                            <a href="/categories/WEBP/">WEBP</a>&nbsp;
+                            <a href="/categories/Framework/">Framework</a>&nbsp;
                         </li>
                     
                     
@@ -439,17 +438,6 @@
             </ul>
         </span>
     
-    
-        <span class="article-tags article-meta-item">
-            <i class="fa-regular fa-tags"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/tags/webp/">webp</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
     
 
     
@@ -471,17 +459,28 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <p>图片转为webp格式的方式有很多种，包括在线工具、图像编辑软件、命令行工具。本文以命令行工具为例说明。</p>
-<h2 id="使用命令行工具（cwebp）"><a href="#使用命令行工具（cwebp）" class="headerlink" title="使用命令行工具（cwebp）"></a>使用命令行工具（cwebp）</h2><p>使用命令行工具如<code>cwebp</code>来进行转换。</p>
-<h3 id="安装cwebp"><a href="#安装cwebp" class="headerlink" title="安装cwebp"></a>安装<code>cwebp</code></h3><p>1、对于Windows用户，可以从<code>Google WebP</code>下载。</p>
-<p>2、macOS用户，可以使用Homebrew进行安装：</p>
-<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install webp</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="转化图片"><a href="#转化图片" class="headerlink" title="转化图片"></a>转化图片</h3><p>1、打开命令行工具。</p>
-<p>2、使用以下命令将图片转换为WebP格式：</p>
-<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cwebp input.jpg -o output.webp</span><br></pre></td></tr></table></figure></div>
-<p><font color=red>注意：</font>其中，input.jpg是你的输入图片文件名，output.webp是输出的WebP文件名。</p>
-<p>该命令执行后，你的图片将转为webp格式。<br>祝你好运～</p>
+            <h3 id="use-frameworks-生效的条件"><a href="#use-frameworks-生效的条件" class="headerlink" title="use_frameworks!生效的条件"></a>use_frameworks!生效的条件</h3><p>1、use_frameworks!只会在第三方库的podspec文件中没有设置s.static_framework &#x3D; true&#x2F;falue时有效，如果第三方库的podspec文件中设置了s.static_framework &#x3D; true&#x2F;false， 那么依podspec中的设置为准。</p>
+<p>2、第三方库必须是源代码，否则也不生效。比如：原来是.a,.framework静态库，那么不管Podfile中是否添加use_frameworks!都不会影响原来的结果。</p>
+<blockquote>
+<p>库其实就是编译好的二进制文件+头文件+相关的资源文件。<br>静态库（.a）：在编译时会将库copy一份到目标程序中进行合并，编译完成之后，目标程序不依赖外部的库进行运行，缺点是会使应用程序变大<br>动态库（.dylib）：编译时只存储了指向动态库的引用。可以多个程序指向这个库，在运行时才加载然后动态链接，优点不会使体积变大。<br>Framework：实际上是一种打包方式，打出来的包可以是动态库也可以是静态库。它是将库的二进制文件，头文件和有关的资源文件打包到一起，方便管理和分发。</p>
+</blockquote>
+<p>对于CocoaPods管理的第三方库是否使用的Framework，可以通过Podfile中的use_frameworks来控制在Podfile中如果不加use_frameworks!，cocoapods会生成相应的 .a文件（静态链接库）， Link Binary With Libraries: libPods-xxx.a 包含了其他用pod导入有第三库的.a文件</p>
+<p>使用了use_frameworks!，cocoapods会生成对应的frameworks文件（包含了头文件，二进制文件，资源文件等等）Link Binary With Libraries：Pods_xxx.framework包含了其它用pod导入的第三方框架的.framework文件。</p>
+<h3 id="iOS项目中use-frameworks-的使用场景"><a href="#iOS项目中use-frameworks-的使用场景" class="headerlink" title="iOS项目中use_frameworks!的使用场景"></a>iOS项目中use_frameworks!的使用场景</h3><h5 id="1、不使用frameworks的场景"><a href="#1、不使用frameworks的场景" class="headerlink" title="1、不使用frameworks的场景"></a>1、不使用frameworks的场景</h5><p>纯oc项目中 通过pod导入纯oc项目</p>
+<h5 id="2、使用frameworks的场景"><a href="#2、使用frameworks的场景" class="headerlink" title="2、使用frameworks的场景"></a>2、使用frameworks的场景</h5><p>swift 项目中通过pod导入swift项目，必须要使用use_frameworks！，否则报错，在需要使用的到地方 import xxx</p>
+<h5 id="3、可加可不加的场景"><a href="#3、可加可不加的场景" class="headerlink" title="3、可加可不加的场景"></a>3、可加可不加的场景</h5><p>swift 项目中通过pod导入OC项目<br>1、使用use_frameworks，在桥接文件里加上#import “xxxx&#x2F;xxxx.h<br>2、不使用frameworks，桥接文件加上 #import “xxxx.h”</p>
+<h3 id="use-frameworks-何时生效"><a href="#use-frameworks-何时生效" class="headerlink" title="use_frameworks!何时生效"></a>use_frameworks!何时生效</h3><p>use_frameworks!是否生效依赖于podspec指向的第三库的实际情况。</p>
+<h3 id="use-frameworks-不生效场景"><a href="#use-frameworks-不生效场景" class="headerlink" title="use_frameworks!不生效场景"></a>use_frameworks!不生效场景</h3><p>1、如果podspec指向的第三库自己本身就是一个.a 静态库，或者.framework 静态库，<br>podfile是否使用use_framework<br>集成到主工程后，没有区别,都是在app资源包下，与app主二进制可执行程序集合成一个整体执行文件</p>
+<p>2、如果组件库是.framework 动态库<br>那么无论podfile是否使用use_framework都没啥区别，都是在app资源包下面的framework目录下。</p>
+<p>3、podspec 既有静态库又有动态库<br>静态库链接到可执行文件中去。动态库在Frameworks下app启动动态链接。</p>
+<h3 id="use-frameworks-生效场景"><a href="#use-frameworks-生效场景" class="headerlink" title="use_frameworks!生效场景"></a>use_frameworks!生效场景</h3><p>依赖的pod组件库是源代码。<br>如果在podfile中使用了use_framework，会打成动态库framework,放到app Frameworks目录下。 app启动时，动态链接。<br>如果是不用useframework，会编译成.a，随着编译一起打进app二进制可执行程序内。</p>
+<p>当在podfile文件中使用use_frameworks!指令时，CocoaPod在安装Pod时，会用framework方式组织资源（默认使用lib方式）<br>同时该指令还提供扩展选项，指定动态framework或者静态framework<br>use_frameworks! #使用默认值，根据podspec 类型自行设置static或者dynamic<br>use_frameworks! :linkage &#x3D;&gt; :static # 使用静态链接<br>use_frameworks! :linkage &#x3D;&gt; :dynamic #使用动态链接</p>
+<p>当在podfile中设置了use_frameworks! ，但是没有指定linkage &#x3D;&gt; :static或linkage &#x3D;&gt; :dynamic时，则会根据podspec文件中的根配置static_framework &#x3D; true&#x2F;false来设置。<br>和use_frameworks!的起作用条件一样，即使在use_frameworks!后面加了linkage &#x3D;&gt; :static或linkage &#x3D;&gt; :dynamic，也只对源码Pod有效，对已经是framework的pod不起作用。<br>注意：如果pod中的framework是动态库，那么在pod install后，会在相应的target的Build Phases设置中添加[cp] Embed Pods Frameworks脚本，以动态库的方式将framework输出到最终产物中。</p>
+<p>如果在podspec中既有 静态库，又有动态库：</p>
+<p>s.dependency ‘xxx’ &#x2F;&#x2F;是一个动态库<br>s.dependency ‘yyy’ &#x2F;&#x2F;是静态库</p>
+<p>那么在Podfile中：<br>1、不使用：use_frameworks!<br>或者使用：use_frameworks! :linkage &#x3D;&gt; :static<br>按照静态库进行编译，则可以编译通过.</p>
+<p>2、使用：use_frameworks!<br>或者使用 use_frameworks! :linkage &#x3D;&gt; :dynamic<br>进行动态库进行编译时，就会pod install报错.</p>
+<p>详见: <a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/zhou--fei/p/18066471" >https://www.cnblogs.com/zhou--fei/p/18066471 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 
         </div>
 
@@ -489,18 +488,18 @@
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> 图片转webp</li>
+        <li><strong>Title:</strong> Podfile中的use_frameworks</li>
         <li><strong>Author:</strong> The Devn Team</li>
         <li><strong>Created at
-                :</strong> 2024-06-07 15:35:32</li>
+                :</strong> 2024-06-07 18:25:45</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-06-07 19:07:03
+                    :</strong> 2024-06-07 19:08:43
             </li>
         
         <li>
-            <strong>Link:</strong> https://redefine.ohevan.com/2024/06/07/图片转webp/
+            <strong>Link:</strong> https://redefine.ohevan.com/2024/06/07/Podfile中的use-frameworks/
         </li>
         <li>
             <strong>
@@ -519,43 +518,20 @@
         
 
         
-            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
-                
-                    <li class="tag-item mx-0.5">
-                        <a href="/tags/webp/">#webp</a>&nbsp;
-                    </li>
-                
-            </ul>
-        
 
         
 
         
             <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
                 
-                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-                        <a class="prev"
-                        rel="prev"
-                        href="/2024/06/07/Podfile%E4%B8%AD%E7%9A%84use-frameworks/"
-                        >
-                            <span class="left arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">Podfile中的use_frameworks</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="next"
                         rel="next"
-                        href="/2024/06/07/Hexo%E9%85%8D%E7%BD%AE%E5%90%8E%E9%A1%B5%E9%9D%A2404/"
+                        href="/2024/06/07/%E5%9B%BE%E7%89%87%E8%BD%ACwebp/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">Hexo配置后页面404</span>
+                                <span class="post-nav-title-item">图片转webp</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -618,8 +594,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">图片转webp</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7%EF%BC%88cwebp%EF%BC%89"><span class="nav-text">使用命令行工具（cwebp）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85cwebp"><span class="nav-text">安装cwebp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E5%8C%96%E5%9B%BE%E7%89%87"><span class="nav-text">转化图片</span></a></li></ol></li></ol>
+        <div class="page-title">Podfile中的use_frameworks</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#use-frameworks-%E7%94%9F%E6%95%88%E7%9A%84%E6%9D%A1%E4%BB%B6"><span class="nav-text">use_frameworks!生效的条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS%E9%A1%B9%E7%9B%AE%E4%B8%ADuse-frameworks-%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-text">iOS项目中use_frameworks!的使用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#use-frameworks-%E4%BD%95%E6%97%B6%E7%94%9F%E6%95%88"><span class="nav-text">use_frameworks!何时生效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#use-frameworks-%E4%B8%8D%E7%94%9F%E6%95%88%E5%9C%BA%E6%99%AF"><span class="nav-text">use_frameworks!不生效场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#use-frameworks-%E7%94%9F%E6%95%88%E5%9C%BA%E6%99%AF"><span class="nav-text">use_frameworks!生效场景</span></a></li></ol>
 
     </div>
 </div>
