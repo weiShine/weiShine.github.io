@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-06-07T11:08:43.182Z</updated>
+  <updated>2024-06-12T09:53:20.905Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>uniapp相关</title>
+    <link href="http://example.com/2024/06/12/uniapp%E7%9B%B8%E5%85%B3/"/>
+    <id>http://example.com/2024/06/12/uniapp%E7%9B%B8%E5%85%B3/</id>
+    <published>2024-06-12T08:30:51.478Z</published>
+    <updated>2024-06-12T09:53:20.905Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="初识uniapp"><a href="#初识uniapp" class="headerlink" title="初识uniapp"></a>初识uniapp</h3><p>uniapp是一种基于vue.js的跨平台开发框架，它可以一套代码构建同时在运行在多个平台（iOS、Android、小程序）上的应用程序。</p><h3 id="如何实现跨平台的"><a href="#如何实现跨平台的" class="headerlink" title="如何实现跨平台的"></a>如何实现跨平台的</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1、基于WebView：uniapp使用了各平台提供的原生webview容器作为运行环境，通过webview来加载页面从而实现跨端</span><br><span class="line">2、通用API：uniapp提供了一套通用的api用于不同平台的接口调用方式，开发者可以通过这个api实现跨平台的逻辑。</span><br><span class="line">3、编译打包：通过编译打包的方式生成各个平台的应用程序，开发者编写的代码会被编译成为各个平台所对应的原生代码。</span><br><span class="line">4、平台差异处理：uniapp框架会根据不同平台特性，在编译阶段对代码进行转换和适配，处理各平台之间的差异。</span><br></pre></td></tr></table></figure></div><p>Uni-App的跨平台是通过封装和抽象各平台的能力，提供统一的接口开发和打包编译方式，是开发者可以使用一套代码同时在多个平台上运行应用程序。</p><h3 id="编译器和运行时（runtime）"><a href="#编译器和运行时（runtime）" class="headerlink" title="编译器和运行时（runtime）"></a>编译器和运行时（runtime）</h3><p>uni-app分编译器和运行时（runtime），实现一套代码，多端运行主要是这两部分配合完成的，编译器将开发者的代码进行编译，编译的输出物由每个平台各自的runtime进行解析。</p><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1、在web平台，将.vue文件编译为js代码。</span><br><span class="line">2、在微信小程序平台，编译器将.vue文件拆分生成wxml、wxss、js等代码。</span><br><span class="line">3、在app平台，将.vue文件编译为js代码。如果涉及uts代码，在Android平台，将.uts文件编译为kotlin代码；在iOS平台，将.uts文件编译为swift代码。</span><br></pre></td></tr></table></figure></div><p>编译器vue2版：基于wepback实现；vue3版：基于Vite实现。性能更快。</p><p>编译器支持条件编译，即可以指定某部分代码只编译到特定的终端平台。从而将公用和个性化融合在一个工程中。</p><p>uni-app runtime包括3部分：基础框架、组件、API。</p><p>基础框架：包括语法、数据驱动、全局文件、应用管理、页面管理、js引擎、渲染和排版引擎等</p><p>组件：</p><p>runtime中包括的组件只有基础组件，如<code>&lt;view&gt;</code>、<code>&lt;button&gt;</code>等。扩展组件不包含在uni-app的runtime中，而是下载到用户的项目代码中。</p><p>API：<br>uni-app runtime内置了大量常见的、跨端的 API，比如联网(uni.request)、读取存储(uni.getStorage)。<br>同时uni-app不限制各端原生平台的API调用。开发者可以在uni-app框架中无限制的调用该平台所有能使用的API。</p><h3 id="uniapp的功能框架图"><a href="#uniapp的功能框架图" class="headerlink" title="uniapp的功能框架图"></a>uniapp的功能框架图</h3><p><img                       lazyload                     src="/images/loading.svg"                     data-src="/images/uniapp-fs.png"                      alt="alt text"                ></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;初识uniapp&quot;&gt;&lt;a href=&quot;#初识uniapp&quot; class=&quot;headerlink&quot; title=&quot;初识uniapp&quot;&gt;&lt;/a&gt;初识uniapp&lt;/h3&gt;&lt;p&gt;uniapp是一种基于vue.js的跨平台开发框架，它可以一套代码构建同时在运行在多个平台（</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Podfile中的use_frameworks</title>

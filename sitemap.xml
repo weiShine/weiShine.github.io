@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/2024/06/12/uniapp%E7%9B%B8%E5%85%B3/</loc>
+    
+    <lastmod>2024-06-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/2024/06/07/Podfile%E4%B8%AD%E7%9A%84use-frameworks/</loc>
     
     <lastmod>2024-06-07</lastmod>
@@ -31,7 +40,7 @@
 
   <url>
     <loc>http://example.com/</loc>
-    <lastmod>2024-06-09</lastmod>
+    <lastmod>2024-06-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -39,7 +48,7 @@
   
   <url>
     <loc>http://example.com/tags/webp/</loc>
-    <lastmod>2024-06-09</lastmod>
+    <lastmod>2024-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -48,21 +57,21 @@
   
   <url>
     <loc>http://example.com/categories/Framework/</loc>
-    <lastmod>2024-06-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/categories/WEBP/</loc>
-    <lastmod>2024-06-09</lastmod>
+    <lastmod>2024-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://example.com/categories/Hexo/</loc>
-    <lastmod>2024-06-09</lastmod>
+    <lastmod>2024-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/categories/WEBP/</loc>
+    <lastmod>2024-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
